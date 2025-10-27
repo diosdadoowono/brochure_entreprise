@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexTech Solutions - Brochure d'entreprise</title>
+    <style>
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* En-tête */
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #2a4b8c);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a2a6c;
+            font-size: 2rem;
+        }
+        
+        /* À propos */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services */
+        .services {
+            background-color: #f0f4f8;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: #2a4b8c;
+            margin-bottom: 15px;
+        }
+        
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #1a2a6c;
+        }
+        
+        /* Équipe */
+        .team {
+            background-color: white;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #e0e7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #2a4b8c;
+        }
+        
+        .member-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .member-role {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact */
+        .contact {
+            background-color: #1a2a6c;
+            color: white;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3d8b40;
+        }
+        
+        /* Pied de page */
+        footer {
+            background-color: #0d1b4c;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="logo">NexTech Solutions</div>
+            <div class="tagline">Innovation technologique pour un avenir meilleur</div>
+        </div>
+    </header>
+
+    <!-- Section À propos -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">À propos de nous</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Fondée en 2015, NexTech Solutions est une entreprise leader dans le domaine des technologies innovantes. Notre mission est de fournir des solutions digitales sur mesure qui transforment la façon dont les entreprises opèrent et interagissent avec leurs clients.</p>
+                    <p>Avec une équipe de plus de 50 experts passionnés, nous avons accompagné plus de 200 entreprises dans leur transformation numérique. Notre approche centrée sur l'humain et notre expertise technique nous permettent de créer des solutions qui font la différence.</p>
+                    <p>Nous croyons en un avenir où la technologie sert à améliorer la vie des personnes et à créer des opportunités pour tous.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Image d'illustration (remplacée par un fond coloré pour l'exemple) -->
+                    <div style="height: 300px; background: linear-gradient(45deg, #2a4b8c, #4a6bac); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        Notre équipe en action
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Nos services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3 class="service-title">Développement d'applications</h3>
+                    <p>Nous créons des applications mobiles et web sur mesure, adaptées à vos besoins spécifiques et à ceux de vos utilisateurs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3 class="service-title">Solutions Cloud</h3>
+                    <p>Optimisez votre infrastructure avec nos solutions cloud sécurisées et évolutives pour une performance maximale.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Intelligence Artificielle</h3>
+                    <p>Intégrez l'IA dans vos processus pour automatiser les tâches répétitives et obtenir des insights précieux.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3 class="service-title">Cybersécurité</h3>
+                    <p>Protégez vos données et systèmes avec nos solutions de sécurité avancées et nos audits complets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Équipe -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Notre équipe dirigeante</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">👨‍💼</div>
+                    <h3 class="member-name">Alexandre Martin</h3>
+                    <div class="member-role">PDG & Fondateur</div>
+                    <p>Visionnaire avec 15 ans d'expérience dans le secteur technologique.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">👩‍💼</div>
+                    <h3 class="member-name">Sophie Leroy</h3>
+                    <div class="member-role">Directrice Technique</div>
+                    <p>Expert en architecture logicielle et gestion de projets complexes.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">👨‍💼</div>
+                    <h3 class="member-name">Thomas Dubois</h3>
+                    <div class="member-role">Directeur Innovation</div>
+                    <p>Spécialiste en IA et technologies émergentes.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">👩‍💼</div>
+                    <h3 class="member-name">Camille Moreau</h3>
+                    <div class="member-role">Directrice Commerciale</div>
+                    <p>Passionnée par la création de partenariats durables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>123 Avenue de la Technologie, 75000 Paris, France</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>+33 1 23 45 67 89</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>contact@nextech-solutions.fr</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>www.nextech-solutions.fr</div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Sujet">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 NexTech Solutions. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
