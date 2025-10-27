@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation - NexTech Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #2a4b8c, #4a6bac);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo i {
+            font-size: 3.5rem;
+            color: #4CAF50;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .presentation-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .card-header {
+            background: linear-gradient(to right, #1a2a6c, #2a4b8c);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #2a4b8c;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: #2a4b8c;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 15px;
+            color: #1a2a6c;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            background: #3d8b40;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #2a4b8c;
+            color: #2a4b8c;
+        }
+
+        .btn-outline:hover {
+            background: #2a4b8c;
+            color: white;
+        }
+
+        .screenshot {
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .screenshot:hover img {
+            transform: scale(1.03);
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tech-item {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            color: #1a2a6c;
+        }
+
+        .tech-item i {
+            color: #4CAF50;
+            font-size: 1.5rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1a2a6c;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: white;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: #4CAF50;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .logo i {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span>NexTech Solutions</span>
+            </div>
+            <div class="tagline">Présentation de notre site web d'entreprise</div>
+        </header>
+
+        <div class="presentation-card">
+            <div class="card-header">
+                <h1>Brochure Interactive NexTech Solutions</h1>
+                <p>Découvrez notre présence en ligne professionnelle</p>
+            </div>
+            <div class="card-body">
+                <h2>À propos de ce projet</h2>
+                <p>Ce site web a été conçu pour présenter NexTech Solutions, une entreprise fictive spécialisée dans les solutions technologiques innovantes. Il sert de brochure digitale complète avec un design moderne et responsive.</p>
+                
+                <div class="screenshot">
+                    <div style="height: 300px; background: linear-gradient(45deg, #2a4b8c, #4a6bac); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        Aperçu du site NexTech Solutions
+                    </div>
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Design Responsive</h3>
+                        <p>Le site s'adapte parfaitement à tous les appareils : desktop, tablette et mobile.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-palette"></i>
+                        <h3>Interface Moderne</h3>
+                        <p>Design épuré avec une palette de couleurs professionnelle et des animations subtiles.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Performance Optimisée</h3>
+                        <p>Chargement rapide et expérience utilisateur fluide sur tous les navigateurs.</p>
+                    </div>
+                </div>
+                
+                <h2>Fonctionnalités principales</h2>
+                <ul style="list-style-type: none; padding-left: 20px;">
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i> Présentation complète de l'entreprise</li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i> Catalogue de services détaillé</li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i> Présentation de l'équipe dirigeante</li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i> Formulaire de contact fonctionnel</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i> Design cohérent et professionnel</li>
+                </ul>
+                
+                <h2>Technologies utilisées</h2>
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>Design Responsive</span>
+                    </div>
+                </div>
+                
+                <h2>Statistiques du projet</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Sections principales</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Responsive</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Dépendances externes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Fichier HTML</span>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn">Voir le site complet</a>
+                    <a href="#" class="btn btn-outline">Télécharger le code source</a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>NexTech Solutions - Présentation du site web</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2023 NexTech Solutions. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Animation pour les statistiques
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.round(current);
+                }, 30);
+            });
+            
+            // Animation au défilement pour les fonctionnalités
+            const features = document.querySelectorAll('.feature');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            features.forEach(feature => {
+                feature.style.opacity = '0';
+                feature.style.transform = 'translateY(20px)';
+                feature.style.transition = 'opacity 0.5s, transform 0.5s';
+                observer.observe(feature);
+            });
+        });
+    </script>
+</body>
+</html>
